@@ -22,10 +22,13 @@ public class LabyrintheTile : MonoBehaviour
     int previousState;
     int nextState;
 
+    private bool hasPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         manager = GameManager.Instance;
+        hasPlayer = false;
         UpdateRotation();
         if (translationEnabled) {
             for (int i=0;i<otherPositions.Length-1;i++) {
@@ -119,9 +122,8 @@ public class LabyrintheTile : MonoBehaviour
                 if (rotationEnabled) {
                     Debug.Log(GetComponent<BoxCollider2D>().GetInstanceID());
                     Debug.Log(GetInstanceID()+10);
-                    Debug.Log(manager.PlayerOnTile);
                     Debug.Log("===");
-                    if (manager.PlayerOnTile != GetInstanceID()+10) {
+                    if (!hasPlayer) {
                         angle = (angle+90.0f) % 360.0f;
                         //Debug.Log(angle);
                         UpdateRotation();
@@ -133,5 +135,23 @@ public class LabyrintheTile : MonoBehaviour
                 }
             }
         //}
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            //Debug.Log("on tile " + transform.name);
+            hasPlayer = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            //Debug.Log("exit tile " + transform.name);
+            hasPlayer = false;
+        }
     }
 }
