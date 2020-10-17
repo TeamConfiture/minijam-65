@@ -11,7 +11,6 @@ public class LabyrintheTile : MonoBehaviour
     [Header("Translation")]
     public bool translationEnabled = false;
     public GameObject[] otherPositions;
-    public bool stickyToCharacter = true;
 
     bool isMoving;
     List<Vector3> tilePositions = new List<Vector3>();
