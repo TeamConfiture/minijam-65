@@ -6,7 +6,7 @@ public class LabyrintheTile : MonoBehaviour
 {
     [Header("Rotation")]
     public bool rotationEnabled = true;
-    public float angle = 0.0f;
+    public float angle = 180.0f;
     public bool PlayerOnTile = false;
 
     [Header("Translation")]
