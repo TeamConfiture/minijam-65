@@ -84,7 +84,7 @@ public class LabyrintheTile : MonoBehaviour
                                  (futureMove*(1-Mathf.Max(0, endOfMoveTime - Time.time)));
             if (endOfMoveTime - Time.time <= 0) {
                 previousState = nextState;
-                futureMove = new Vector3(0.0f, 0.0f, 0.0f);
+                futureMove = Vector2.zero;
                 isMoving = false;
             }
         }
