@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7478543944984363758}
   - component: {fileID: 7478543944984363744}
   m_Layer: 0
-  m_Name: TP1-2
+  m_Name: TeleporterRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7478543944984363745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 30, y: 5, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
