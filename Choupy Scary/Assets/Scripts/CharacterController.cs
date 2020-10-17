@@ -38,6 +38,15 @@ public class CharacterController : MonoBehaviour
 
         Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         var direction = worldMousePosition - transform.position;
+
+
+        //on restreint le tir à 4 directions en enlevant la coordonée (x ou y) la plus petite (en valeur absolue) pour ne garder que la direction "principale"
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            direction.y = 0;
+        else
+            direction.x = 0;
+            
+
         direction.Normalize();
 
         Rigidbody2D projectile = Instantiate(bullet, transform.position, transform.rotation);
