@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool blocPosition = false;
     [Header("Game Status")]
     public bool[] obtainedStatus = new bool[3] {false, false, false};
+    public bool PouvoirBetonniere = true; // TODO : Remettre à false !!!
 
     public static GameManager Instance;
 
@@ -59,5 +60,9 @@ public class GameManager : MonoBehaviour
     public void TriggerPrefabsReset()
     {
         ResetPrefabs();
+    }
+
+    public void ActiveBetonniere() {
+        PouvoirBetonniere = true;
     }
 }

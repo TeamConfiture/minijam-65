@@ -15,6 +15,7 @@ public class LabyrintheTile : MonoBehaviour
     bool isMoving;
     List<Vector3> tilePositions = new List<Vector3>();
 
+    GameManager manager = null;
     Vector3 futureMove; // Future movement
     float endOfMoveTime = 0.0f;
     int previousState;
@@ -23,6 +24,7 @@ public class LabyrintheTile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        manager = GameManager.Instance;
         UpdateRotation();
         if (translationEnabled) {
             for (int i=0;i<otherPositions.Length-1;i++) {
@@ -91,13 +93,15 @@ public class LabyrintheTile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (rotationEnabled) {
-            angle = (angle+90.0f) % 360.0f;
-            //Debug.Log(angle);
-            UpdateRotation();
-        } else if (translationEnabled) {
-            if (!isMoving) {
-                nextState = (previousState+1)%otherPositions.Length;
+        if (manager.PouvoirBetonniere) {
+            if (rotationEnabled) {
+                angle = (angle+90.0f) % 360.0f;
+                //Debug.Log(angle);
+                UpdateRotation();
+            } else if (translationEnabled) {
+                if (!isMoving) {
+                    nextState = (previousState+1)%otherPositions.Length;
+                }
             }
         }
     }
