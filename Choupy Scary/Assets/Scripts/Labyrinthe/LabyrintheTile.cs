@@ -10,24 +10,35 @@ public class LabyrintheTile : MonoBehaviour
 
     [Header("Translation")]
     public bool translationEnabled = false;
-    public GameObject otherPosition = null;
+    public GameObject[] otherPositions;
     public bool stickyToCharacter = true;
 
     bool isMoving;
-    Vector3 firstPos; // Original Position
-    Vector3 secondPos; // Next Position
+    List<Vector3> tilePositions = new List<Vector3>();
+
     Vector3 futureMove; // Future movement
     float endOfMoveTime = 0.0f;
-    bool newStatus = false;
-    bool blocStatus = false;
+    int previousState;
+    int nextState;
 
     // Start is called before the first frame update
     void Start()
     {
         UpdateRotation();
-        firstPos = transform.position;
-        secondPos = otherPosition.transform.position;
-        futureMove = new Vector3(0.0f, 0.0f, 0.0f);
+        if (translationEnabled) {
+            for (int i=0;i<otherPositions.Length-1;i++) {
+                tilePositions.Add(otherPositions[i+1].transform.position - otherPositions[i].transform.position);
+            }
+            tilePositions.Add(otherPositions[0].transform.position - otherPositions[otherPositions.Length-1].transform.position);
+            previousState = 0;
+            nextState = 0;
+            futureMove = new Vector3(0.0f, 0.0f, 0.0f);
+            Debug.Log(transform.position);
+            transform.position = otherPositions[0].transform.position;
+            Debug.Log(transform.position);
+            Debug.Log(otherPositions[0].transform.position);
+            Debug.Log("===");
+        }
     }
 
     // Update is called once per frame
@@ -44,11 +55,11 @@ public class LabyrintheTile : MonoBehaviour
             Debug.Log(firstPos + (futureMove*(1-Mathf.Max(0, endOfMoveTime - Time.time))));
             Debug.Log("-----");
             */
-            transform.position = firstPos + (futureMove*(1-Mathf.Max(0, endOfMoveTime - Time.time)));
+            transform.position = otherPositions[previousState].transform.position + 
+                                 (futureMove*(1-Mathf.Max(0, endOfMoveTime - Time.time)));
             if (endOfMoveTime - Time.time <= 0) {
-                var temp = firstPos;
-                firstPos = secondPos;
-                secondPos = temp;
+                previousState = nextState;
+                futureMove = new Vector3(0.0f, 0.0f, 0.0f);
                 isMoving = false;
             }
         }
@@ -56,17 +67,19 @@ public class LabyrintheTile : MonoBehaviour
 
     void UpdateTranslation() {
         if (!isMoving) {
-            if (newStatus != blocStatus) {
-                /*Debug.Log(firstPos);
-                Debug.Log(secondPos);
-                Debug.Log(transform.position);*/
+            if (previousState != nextState) {
+                Debug.Log(previousState);
+                Debug.Log(nextState);
+                Debug.Log(otherPositions[previousState].transform.position);
+                Debug.Log(otherPositions[nextState].transform.position);
+                Debug.Log(transform.position);
+                Debug.Log(otherPositions[0].transform.position);
                 endOfMoveTime = Time.time + 1;
                 isMoving = true;
-                blocStatus = newStatus;
-                futureMove = secondPos - firstPos;
-                /*Debug.Log(futureMove);
-                Debug.Log(firstPos+futureMove);
-                Debug.Log("=====");*/
+                futureMove = tilePositions[previousState];
+                Debug.Log(futureMove);
+                Debug.Log(otherPositions[previousState].transform.position+futureMove);
+                Debug.Log("=====");
             }
         }
     }
@@ -84,7 +97,9 @@ public class LabyrintheTile : MonoBehaviour
             //Debug.Log(angle);
             UpdateRotation();
         } else if (translationEnabled) {
-            newStatus = !blocStatus;
+            if (!isMoving) {
+                nextState = (previousState+1)%otherPositions.Length;
+            }
         }
     }
 }
