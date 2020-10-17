@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 1612681997}
   CreditsMenu: {fileID: 1185198641}
-  soundEffect: {fileID: 1579319715}
+  soundEffect: {fileID: 0}
 --- !u!1 &1640388038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,5 +2123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 1612681997}
-  CreditsMenu: {fileID: 1083850935}
-  soundEffect: {fileID: 0}
+  CreditsMenu: {fileID: 1185198641}
+  soundEffect: {fileID: 1579319715}
