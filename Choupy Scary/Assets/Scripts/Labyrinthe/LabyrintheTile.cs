@@ -33,11 +33,11 @@ public class LabyrintheTile : MonoBehaviour
             previousState = 0;
             nextState = 0;
             futureMove = new Vector3(0.0f, 0.0f, 0.0f);
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
             transform.position = otherPositions[0].transform.position;
-            Debug.Log(transform.position);
+            /*Debug.Log(transform.position);
             Debug.Log(otherPositions[0].transform.position);
-            Debug.Log("===");
+            Debug.Log("===");*/
         }
     }
 
@@ -68,18 +68,18 @@ public class LabyrintheTile : MonoBehaviour
     void UpdateTranslation() {
         if (!isMoving) {
             if (previousState != nextState) {
-                Debug.Log(previousState);
+                /*Debug.Log(previousState);
                 Debug.Log(nextState);
                 Debug.Log(otherPositions[previousState].transform.position);
                 Debug.Log(otherPositions[nextState].transform.position);
                 Debug.Log(transform.position);
-                Debug.Log(otherPositions[0].transform.position);
+                Debug.Log(otherPositions[0].transform.position);*/
                 endOfMoveTime = Time.time + 1;
                 isMoving = true;
                 futureMove = tilePositions[previousState];
-                Debug.Log(futureMove);
+                /*Debug.Log(futureMove);
                 Debug.Log(otherPositions[previousState].transform.position+futureMove);
-                Debug.Log("=====");
+                Debug.Log("=====");*/
             }
         }
     }
