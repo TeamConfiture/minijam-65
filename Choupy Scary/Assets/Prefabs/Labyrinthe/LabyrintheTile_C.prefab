@@ -91,9 +91,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6973733069108083124}
   - component: {fileID: 6697663437543334842}
+  - component: {fileID: 8096749178058825757}
   - component: {fileID: 4767212059727976771}
   - component: {fileID: 3971815534550474618}
-  - component: {fileID: 8096749178058825757}
   m_Layer: 0
   m_Name: LabyrintheTile_C
   m_TagString: Platform
@@ -130,8 +130,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationEnabled: 1
   angle: 0
+  PlayerOnTile: 0
   translationEnabled: 0
   otherPositions: []
+--- !u!61 &8096749178058825757
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787928699928740584}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!68 &4767212059727976771
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -180,30 +207,4 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.39999998, y: 0.4}
-  m_EdgeRadius: 0
---- !u!61 &8096749178058825757
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7787928699928740584}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0

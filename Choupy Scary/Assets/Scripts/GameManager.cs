@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Status")]
     public bool[] obtainedStatus = new bool[3] {false, false, false};
     public bool PouvoirBetonniere = true; // TODO : Remettre à false !!!
+    public int PlayerOnTile = -1;
 
     public static GameManager Instance;
 

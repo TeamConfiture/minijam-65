@@ -7,11 +7,12 @@ public class LabyrintheTile : MonoBehaviour
     [Header("Rotation")]
     public bool rotationEnabled = true;
     public float angle = 0.0f;
+    public bool PlayerOnTile = false;
 
     [Header("Translation")]
     public bool translationEnabled = false;
     public GameObject[] otherPositions;
-
+    
     bool isMoving;
     List<Vector3> tilePositions = new List<Vector3>();
 
@@ -45,7 +46,27 @@ public class LabyrintheTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateTranslation();
+        UpdateTranslation();/*
+        if (Input.GetButton("Fire1")) {
+
+            if (manager.PouvoirBetonniere) {
+                if (rotationEnabled) {
+                    Debug.Log(GetComponent<BoxCollider2D>().GetInstanceID());
+                    Debug.Log(GetInstanceID()+10);
+                    Debug.Log(manager.PlayerOnTile);
+                    Debug.Log("===");
+                    if (manager.PlayerOnTile != GetInstanceID()+10) {
+                        angle = (angle+90.0f) % 360.0f;
+                        //Debug.Log(angle);
+                        UpdateRotation();
+                    }
+                } else if (translationEnabled) {
+                    if (!isMoving) {
+                        nextState = (previousState+1)%otherPositions.Length;
+                    }
+                }
+            }
+        }*/
     }
 
     void FixedUpdate()
@@ -91,18 +112,26 @@ public class LabyrintheTile : MonoBehaviour
         //Debug.Log(transform.rotation);
     }
 
-    void OnMouseDown()
+    void OnMouseUpAsButton()
     {
-        if (manager.PouvoirBetonniere) {
-            if (rotationEnabled) {
-                angle = (angle+90.0f) % 360.0f;
-                //Debug.Log(angle);
-                UpdateRotation();
-            } else if (translationEnabled) {
-                if (!isMoving) {
-                    nextState = (previousState+1)%otherPositions.Length;
+        /*if (Input.GetButton("Fire1")) {*/
+            if (manager.PouvoirBetonniere) {
+                if (rotationEnabled) {
+                    Debug.Log(GetComponent<BoxCollider2D>().GetInstanceID());
+                    Debug.Log(GetInstanceID()+10);
+                    Debug.Log(manager.PlayerOnTile);
+                    Debug.Log("===");
+                    if (manager.PlayerOnTile != GetInstanceID()+10) {
+                        angle = (angle+90.0f) % 360.0f;
+                        //Debug.Log(angle);
+                        UpdateRotation();
+                    }
+                } else if (translationEnabled) {
+                    if (!isMoving) {
+                        nextState = (previousState+1)%otherPositions.Length;
+                    }
                 }
             }
-        }
+        //}
     }
 }
