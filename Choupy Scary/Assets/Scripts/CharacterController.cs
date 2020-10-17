@@ -6,12 +6,17 @@ public class CharacterController : MonoBehaviour
 {
     [Header("Attributes")]
     public float moveMultiplier = 7f;
+    public Rigidbody2D bullet;
 
+    
     GameManager manager = null;
     GameObject myPlatform = null;
     Vector3 oldPlatformPos;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    public float bulletSpeed = 500f;
+    public float lifespan = 3f;
+
     void Start()
     {
         manager = GameManager.Instance;
@@ -20,7 +25,24 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire2") && CandyTextScript.candyAmount > 0)
+        {
+            Fire();
+        }
+    }
+
+    void Fire()
+    {
+        Debug.Log("Fire");
+        CandyTextScript.candyAmount--;
+
+        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+        var direction = worldMousePosition - transform.position;
+        direction.Normalize();
+
+        Rigidbody2D projectile = Instantiate(bullet, transform.position, transform.rotation);
+        projectile.AddForce(direction * bulletSpeed);
+        Destroy(projectile, lifespan);
     }
 
     void FixedUpdate()
