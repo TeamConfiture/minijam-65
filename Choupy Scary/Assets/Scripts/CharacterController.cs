@@ -47,12 +47,19 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
-        //Debug.Log(movement);
-        transform.position += movement * Time.deltaTime * moveMultiplier;
+        bool canMove = true;
         if (myPlatform != null) {
-            transform.position += (myPlatform.transform.position - oldPlatformPos);
+            Vector3 delta = (myPlatform.transform.position - oldPlatformPos);
+            if (delta != new Vector3(0.0f,0.0f,0.0f)) {
+                transform.position += delta;
+                canMove = false;
+            }
             oldPlatformPos = myPlatform.transform.position;
+        }
+        if (canMove) {
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+            //Debug.Log(movement);
+            transform.position += movement * Time.deltaTime * moveMultiplier;
         }
     }
 
