@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
-        Debug.Log(movement);
+        //Debug.Log(movement);
         transform.position += movement * Time.deltaTime * moveMultiplier;
     }
 }

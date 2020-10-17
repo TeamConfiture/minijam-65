@@ -27,10 +27,14 @@ public class DoudouScript : MonoBehaviour
 
     // Manages whether the character is on the groud or not
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Player" && !transitionning) {
-            transitionning = true;
-            StartCoroutine(changeScene());
-            transitionning = false;
+        if (collision.tag == "Player") {
+            Destroy(gameObject);
+            //Debug.Log("Pick up doudou");
+            /*
+                transitionning = true;
+                StartCoroutine(changeScene());
+                transitionning = false;
+            */
         }
     }
 
