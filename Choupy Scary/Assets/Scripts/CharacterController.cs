@@ -76,8 +76,8 @@ public class CharacterController : MonoBehaviour
         if (collision.tag == "Platform") {
             myPlatform = collision.gameObject;
             oldPlatformPos = myPlatform.transform.position;
-            Debug.Log("Enter " + collision.gameObject);
-            Debug.Log("Sticking to a Tile");
+            /*Debug.Log("Enter " + collision.gameObject);
+            Debug.Log("Sticking to a Tile");*/
         }
     }
 
@@ -85,7 +85,7 @@ public class CharacterController : MonoBehaviour
         if (myPlatform != null) {
             if (myPlatform == collision.gameObject) {
                 myPlatform = null;
-                Debug.Log("Leaving my Tile");
+                //Debug.Log("Leaving my Tile");
             }
         }
     }

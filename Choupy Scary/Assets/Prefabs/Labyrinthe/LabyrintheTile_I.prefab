@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41745e36e69042dbebba507621fb15cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationEnabled: 1
+  rotationEnabled: 0
   angle: 0
   PlayerOnTile: 0
   translationEnabled: 0
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
 --- !u!61 &5876599165046032310
 BoxCollider2D:

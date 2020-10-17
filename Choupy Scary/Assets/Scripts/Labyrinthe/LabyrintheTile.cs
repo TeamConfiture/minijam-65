@@ -6,7 +6,7 @@ public class LabyrintheTile : MonoBehaviour
 {
     [Header("Rotation")]
     public bool rotationEnabled = true;
-    public float angle = 180.0f;
+    public float angle = 0.0f;
     public bool PlayerOnTile = false;
 
     [Header("Translation")]
@@ -29,6 +29,14 @@ public class LabyrintheTile : MonoBehaviour
     {
         manager = GameManager.Instance;
         hasPlayer = false;
+        angle += 180.0f;
+        if (transform.rotation.eulerAngles.z != 0) {
+            /*Debug.Log(transform.rotation.eulerAngles.z);
+            Debug.Log(angle);*/
+            angle = (transform.rotation.eulerAngles.z+angle);
+            //Debug.Log(angle);
+        }
+        angle = angle % 360.0f;
         UpdateRotation();
         if (translationEnabled) {
             for (int i=0;i<otherPositions.Length-1;i++) {
@@ -120,9 +128,9 @@ public class LabyrintheTile : MonoBehaviour
         /*if (Input.GetButton("Fire1")) {*/
             if (manager.PouvoirBetonniere) {
                 if (rotationEnabled) {
-                    Debug.Log(GetComponent<BoxCollider2D>().GetInstanceID());
+                    /*Debug.Log(GetComponent<BoxCollider2D>().GetInstanceID());
                     Debug.Log(GetInstanceID()+10);
-                    Debug.Log("===");
+                    Debug.Log("===");*/
                     if (!hasPlayer) {
                         angle = (angle+90.0f) % 360.0f;
                         //Debug.Log(angle);

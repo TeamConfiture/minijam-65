@@ -36,7 +36,7 @@ public class QuikMouve : MonoBehaviour
             Input.ResetInputAxes();
             if(nextCameraPosition != null) {
                 Camera.main.transform.position = nextCameraPosition.position;
-                Debug.Log(Camera.main.transform.position);
+                //Debug.Log(Camera.main.transform.position);
             }
         }
     }
