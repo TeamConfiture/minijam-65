@@ -41,19 +41,19 @@ public class GameManager : MonoBehaviour
         obtainedStatus[2]=false;
     }
 
-    public void GetArtifact(int artifactId) {
-        Debug.Log("Obtained Artifact !");
-        if (artifactId < 1 || artifactId > 3) {
+    public void GetDoudou(int doudouId) {
+        Debug.Log("Obtained Doudou !");
+        if (doudouId < 1 || doudouId > 3) {
             Debug.Log("Wrong ID !!!");
         } else {
-            obtainedStatus[artifactId-1] = true;
+            obtainedStatus[doudouId-1] = true;
         }
     }
 
-    public bool GetArtifactValue(int artifactId) {
-        if (artifactId < 1 || artifactId > 3)
+    public bool GetDoudouValue(int doudouId) {
+        if (doudouId < 1 || doudouId > 3)
             return false;
-        return obtainedStatus[artifactId-1];
+        return obtainedStatus[doudouId-1];
     }
 
     public void TriggerPrefabsReset()
