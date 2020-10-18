@@ -17,10 +17,15 @@ public class CharacterController : MonoBehaviour
     public float bulletSpeed = 500f;
     public float lifespan = 3f;
 
+    [Header("Audio")]
+    public AudioClip lootCandy;
+    private AudioSource audio;
+
     void Start()
     {
         manager = GameManager.Instance;
         manager.doudouNb = 0;
+        audio = transform.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -104,6 +109,9 @@ public class CharacterController : MonoBehaviour
             oldPlatformPos = myPlatform.transform.position;
             /*Debug.Log("Enter " + collision.gameObject);
             Debug.Log("Sticking to a Tile");*/
+        } else if (collision.CompareTag("Candy"))
+        {
+            audio.PlayOneShot(lootCandy);
         }
     }
 
