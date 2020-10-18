@@ -21,6 +21,8 @@ public class CharacterController : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip lootCandy;
+    public AudioClip shootCandy;
+    public AudioClip deathClip;
     private AudioSource audio;
 
     void Start()
@@ -63,6 +65,7 @@ public class CharacterController : MonoBehaviour
         Rigidbody2D projectile = Instantiate(bullet, transform.position, transform.rotation);
         projectile.AddForce(direction * bulletSpeed);
         projectile.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        audio.PlayOneShot(shootCandy);
         Destroy(projectile.transform.gameObject, lifespan);
     }
 
@@ -133,6 +136,7 @@ public class CharacterController : MonoBehaviour
             Debug.Log("MORT");
             transform.position = respawnPoint.position;
             Camera.main.transform.position = respawnCameraPoint.position;
+            audio.PlayOneShot(deathClip);
         }
     }
 }

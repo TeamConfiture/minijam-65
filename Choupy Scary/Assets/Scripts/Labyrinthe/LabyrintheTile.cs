@@ -28,11 +28,17 @@ public class LabyrintheTile : MonoBehaviour
     public Texture2D cursorTextureRotate;
     public Texture2D cursorTextureTranslate;
 
+    [Header("Audio")]
+    public AudioClip translate;
+    public AudioClip rotate;
+    private AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
         manager = GameManager.Instance;
         hasEntity = false;
+        audio = gameObject.GetComponent<AudioSource>();
         angle += 180.0f;
         if (transform.rotation.eulerAngles.z != 0) {
             /*Debug.Log(transform.rotation.eulerAngles.z);
@@ -41,7 +47,7 @@ public class LabyrintheTile : MonoBehaviour
             //Debug.Log(angle);
         }
         angle = angle % 360.0f;
-        UpdateRotation();
+        //UpdateRotation();
         if (translationEnabled) {
             for (int i=0;i<otherPositions.Length-1;i++) {
                 tilePositions.Add(otherPositions[i+1].transform.position - otherPositions[i].transform.position);
@@ -114,6 +120,7 @@ public class LabyrintheTile : MonoBehaviour
                 endOfMoveTime = Time.time + 1;
                 isMoving = true;
                 futureMove = tilePositions[previousState];
+                audio.PlayOneShot(translate);
                 /*Debug.Log(futureMove);
                 Debug.Log(otherPositions[previousState].transform.position+futureMove);
                 Debug.Log("=====");*/
@@ -124,6 +131,7 @@ public class LabyrintheTile : MonoBehaviour
     void UpdateRotation() {
         //transform.Rotate(0.0f, 0.0f, angle, Space.Self);
         transform.rotation = Quaternion.Euler(Vector3.forward * (angle-180.0f));
+        audio.PlayOneShot(rotate);
         //Debug.Log(transform.rotation);
     }
 

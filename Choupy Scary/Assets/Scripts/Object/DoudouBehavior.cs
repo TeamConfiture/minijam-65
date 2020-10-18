@@ -19,6 +19,11 @@ public class DoudouBehavior : MonoBehaviour
     private bool isPickedUp;
     private int followerNb;
 
+    [Header("Audio")]
+    public AudioClip transfo;
+    public AudioClip pickupDoudou;
+    private AudioSource audio;
+
     GameManager manager = null;
 
     // Start is called before the first frame update
@@ -29,7 +34,7 @@ public class DoudouBehavior : MonoBehaviour
         sprd = gameObject.GetComponent<SpriteRenderer>();
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         coll2d = gameObject.GetComponent<Collider2D>();
-
+        audio = gameObject.GetComponent<AudioSource>();
         isEvil = true;
         isPickedUp = false;
     }
@@ -65,6 +70,7 @@ public class DoudouBehavior : MonoBehaviour
             // Remove devil doudou and replace by cute doudou  
             isEvil = false;
             transform.gameObject.tag = "NiceDoudou";
+            audio.PlayOneShot(transfo);
             StartCoroutine("Transformation");
         }
         //Handle when a player pick up a nice doudou
@@ -72,6 +78,7 @@ public class DoudouBehavior : MonoBehaviour
         {
             isPickedUp = true;
             followerNb = manager.RegisterNewDoudou();
+            audio.PlayOneShot(pickupDoudou);
         }
     }
 
