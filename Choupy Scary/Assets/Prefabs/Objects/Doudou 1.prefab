@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   niceDoudou: {fileID: 21300000, guid: 7a926cd852fe9cc45836fcedc30d7d29, type: 3}
+  cloud: {fileID: 21300000, guid: 87cb3e574de2b1f44a93fee9a86fed08, type: 3}
   player: {fileID: 0}
   distance: 5
   speedEvil: 2

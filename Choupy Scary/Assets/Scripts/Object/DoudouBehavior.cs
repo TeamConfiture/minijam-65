@@ -8,6 +8,7 @@ public class DoudouBehavior : MonoBehaviour
     private Rigidbody2D rb2d;
     private Collider2D coll2d;
     public Sprite niceDoudou;
+    public Sprite cloud;
 
     public GameObject player;
     public float distance;
@@ -59,14 +60,12 @@ public class DoudouBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bullet turn evil doudou into nice ones <3
-        if (collision.tag == "Bullet")
+        if (collision.tag == "Bullet" && isEvil)
         {
-            // Remove devil doudou and replace by cute doudou
-            sprd.sprite = niceDoudou;
+            // Remove devil doudou and replace by cute doudou  
             isEvil = false;
             transform.gameObject.tag = "NiceDoudou";
-            coll2d.isTrigger = true;
-            Destroy(rb2d);
+            StartCoroutine("Transformation");
         }
         //Handle when a player pick up a nice doudou
         if (!isEvil && collision.CompareTag("Player") && !isPickedUp)
@@ -74,5 +73,20 @@ public class DoudouBehavior : MonoBehaviour
             isPickedUp = true;
             followerNb = manager.RegisterNewDoudou();
         }
+    }
+
+    private IEnumerator Transformation()
+    {
+        float animation = 0;
+        sprd.sprite = cloud;
+        while (animation < 1f)
+        {
+            yield return new WaitForSeconds(0.1f);
+            animation += 0.1f;
+            transform.localScale = transform.localScale - new Vector3(0.02f, 0.02f, 0.02f);
+        }
+        sprd.sprite = niceDoudou;
+        coll2d.isTrigger = true;
+        Destroy(rb2d);
     }
 }

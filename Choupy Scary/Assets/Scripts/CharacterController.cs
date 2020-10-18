@@ -55,6 +55,7 @@ public class CharacterController : MonoBehaviour
 
         Rigidbody2D projectile = Instantiate(bullet, transform.position, transform.rotation);
         projectile.AddForce(direction * bulletSpeed);
+        projectile.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
         Destroy(projectile, lifespan);
     }
 
