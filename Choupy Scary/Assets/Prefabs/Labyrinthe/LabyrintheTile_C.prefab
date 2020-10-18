@@ -134,7 +134,7 @@ MonoBehaviour:
   translationEnabled: 0
   otherPositions: []
   cursorTextureRotate: {fileID: 2800000, guid: 46038ab5d90ae61409174be4afd6d63b, type: 3}
-  cursorTextureTranslate: {fileID: 2800000, guid: 5a351f4659618304fa1a41e8fb053e80,
+  cursorTextureTranslate: {fileID: 2800000, guid: 5f2171675e35f3d45a1e9ad82b5c1d77,
     type: 3}
 --- !u!61 &8096749178058825757
 BoxCollider2D:

@@ -182,4 +182,18 @@ public class LabyrintheTile : MonoBehaviour
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
+
+    private void OnMouseOver()
+    {
+        if (rotationEnabled && !hasEntity)
+        {
+            Cursor.SetCursor(cursorTextureRotate, Vector2.zero, CursorMode.Auto);
+        } else if (translationEnabled)
+        {
+            Cursor.SetCursor(cursorTextureTranslate, Vector2.zero, CursorMode.Auto);
+        } else
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
+    }
 }

@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: cursorTextureTranslate
       value: 
       objectReference: {fileID: 2800000, guid: 5a351f4659618304fa1a41e8fb053e80, type: 3}
+    - target: {fileID: 4772686501070713097, guid: 317f0594708f29f45baeab35325d3af6,
+        type: 3}
+      propertyPath: rotationEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8276872419175157851, guid: 317f0594708f29f45baeab35325d3af6,
         type: 3}
       propertyPath: m_Name
@@ -769,7 +774,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cursorTextureTranslate
       value: 
-      objectReference: {fileID: 2800000, guid: 5a351f4659618304fa1a41e8fb053e80, type: 3}
+      objectReference: {fileID: 2800000, guid: 5f2171675e35f3d45a1e9ad82b5c1d77, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2c8c0261b7038084af13cc22616fccc, type: 3}
 --- !u!4 &168982450 stripped
@@ -1035,6 +1040,11 @@ PrefabInstance:
       propertyPath: angle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6697663437543334842, guid: c25ec9e52421c9569bc001a43a2ffa89,
+        type: 3}
+      propertyPath: cursorTextureTranslate
+      value: 
+      objectReference: {fileID: 2800000, guid: 5f2171675e35f3d45a1e9ad82b5c1d77, type: 3}
     - target: {fileID: 6973733069108083124, guid: c25ec9e52421c9569bc001a43a2ffa89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1985,6 +1995,11 @@ PrefabInstance:
       propertyPath: cursorTextureTranslate
       value: 
       objectReference: {fileID: 2800000, guid: 5a351f4659618304fa1a41e8fb053e80, type: 3}
+    - target: {fileID: 4772686501070713097, guid: 317f0594708f29f45baeab35325d3af6,
+        type: 3}
+      propertyPath: rotationEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8276872419175157851, guid: 317f0594708f29f45baeab35325d3af6,
         type: 3}
       propertyPath: m_Name
@@ -3584,7 +3599,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cursorTextureTranslate
       value: 
-      objectReference: {fileID: 2800000, guid: 5a351f4659618304fa1a41e8fb053e80, type: 3}
+      objectReference: {fileID: 2800000, guid: 5f2171675e35f3d45a1e9ad82b5c1d77, type: 3}
     - target: {fileID: 8276872419175157851, guid: 317f0594708f29f45baeab35325d3af6,
         type: 3}
       propertyPath: m_Name
@@ -3974,7 +3989,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cursorTextureTranslate
       value: 
-      objectReference: {fileID: 2800000, guid: 5a351f4659618304fa1a41e8fb053e80, type: 3}
+      objectReference: {fileID: 2800000, guid: 5f2171675e35f3d45a1e9ad82b5c1d77, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d9972f478d129868f7ddc773379556, type: 3}
 --- !u!1001 &1959682718
