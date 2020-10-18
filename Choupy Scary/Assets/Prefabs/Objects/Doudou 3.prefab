@@ -115,8 +115,8 @@ MonoBehaviour:
   niceDoudou: {fileID: 21300000, guid: b07762cc7e90fe7499b84ebe6dc6861a, type: 3}
   cloud: {fileID: 21300000, guid: 87cb3e574de2b1f44a93fee9a86fed08, type: 3}
   player: {fileID: 0}
-  distance: 5
-  speedEvil: 2
+  distance: 15
+  speedEvil: 2.5
   speedNice: 3
 --- !u!50 &6763414228748821893
 Rigidbody2D:

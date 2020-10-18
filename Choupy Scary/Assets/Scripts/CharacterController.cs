@@ -8,7 +8,9 @@ public class CharacterController : MonoBehaviour
     public float moveMultiplier = 7f;
     public Rigidbody2D bullet;
     public Animator anim;
-    
+    public Transform respawnPoint;
+    public Transform respawnCameraPoint;
+
     GameManager manager = null;
     GameObject myPlatform = null;
     Vector3 oldPlatformPos;
@@ -129,6 +131,8 @@ public class CharacterController : MonoBehaviour
         if (collision.transform.CompareTag("DevilDoudou"))
         {
             Debug.Log("MORT");
+            transform.position = respawnPoint.position;
+            Camera.main.transform.position = respawnCameraPoint.position;
         }
     }
 }
