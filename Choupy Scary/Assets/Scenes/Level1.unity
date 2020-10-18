@@ -3306,6 +3306,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1808932070}
     - target: {fileID: 2363426659747342839, guid: c238972fcbe16bfe6a8a4763df353ff0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3766,6 +3771,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d9972f478d129868f7ddc773379556, type: 3}
+--- !u!95 &1808932070 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -688874208651243477, guid: c238972fcbe16bfe6a8a4763df353ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1684488636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1816185422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1950334734034557927, guid: 96d9972f478d129868f7ddc773379556,
@@ -4246,6 +4257,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2447035409983434666, guid: f5cf8f9473df8ff469d6cde799db5381,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f7400b7ef28ebe54aab4085e8d9d4abd, type: 3}
     - target: {fileID: 6651666736997704888, guid: f5cf8f9473df8ff469d6cde799db5381,
         type: 3}
       propertyPath: m_LocalPosition.x
