@@ -7,7 +7,7 @@ public class CharacterController : MonoBehaviour
     [Header("Attributes")]
     public float moveMultiplier = 7f;
     public Rigidbody2D bullet;
-
+    public Animator anim;
     
     GameManager manager = null;
     GameObject myPlatform = null;
@@ -74,6 +74,27 @@ public class CharacterController : MonoBehaviour
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
             //Debug.Log(movement);
             transform.position += movement * Time.deltaTime * moveMultiplier;
+
+            if (movement.x > 0)
+            {
+                anim.SetBool("IsWalking", true);
+                anim.SetInteger("Direction", 1);
+            } else if (movement.x < 0)
+            {
+                anim.SetBool("IsWalking", true);
+                anim.SetInteger("Direction", 3);
+            } else if (movement.y > 0)
+            {
+                anim.SetBool("IsWalking", true);
+                anim.SetInteger("Direction", 0);
+            } else if (movement.y < 0)
+            {
+                anim.SetBool("IsWalking", true);
+                anim.SetInteger("Direction", 2);
+            } else
+            {
+                anim.SetBool("IsWalking", false);
+            }
         }
     }
 

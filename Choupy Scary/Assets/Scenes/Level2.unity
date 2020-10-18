@@ -1492,6 +1492,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4319043770676070497, guid: 443f85abd13efb140a64e3080b6e604c,
         type: 3}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1596117622}
     - target: {fileID: 2363426659747342839, guid: c238972fcbe16bfe6a8a4763df353ff0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4122,7 +4127,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1084730087}
   - component: {fileID: 1084730086}
-  - component: {fileID: 1084730085}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4130,14 +4134,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1084730085
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084730084}
-  m_Enabled: 1
 --- !u!20 &1084730086
 Camera:
   m_ObjectHideFlags: 0
@@ -5829,6 +5825,12 @@ Transform:
 --- !u!1 &1596117615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7078634238403313053, guid: c238972fcbe16bfe6a8a4763df353ff0,
+    type: 3}
+  m_PrefabInstance: {fileID: 431361281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1596117622 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -688874208651243477, guid: c238972fcbe16bfe6a8a4763df353ff0,
     type: 3}
   m_PrefabInstance: {fileID: 431361281}
   m_PrefabAsset: {fileID: 0}
