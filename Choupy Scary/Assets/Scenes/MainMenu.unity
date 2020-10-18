@@ -188,7 +188,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 6425772f5808aa7f5a3cbcbe519a729c,
+    m_HighlightedSprite: {fileID: 21300000, guid: b252a30016b2e8809a952a9b3dca1469,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
@@ -583,8 +583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150.7}
-  m_SizeDelta: {x: 290.45898, y: 71.536316}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 220, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083850937
 MonoBehaviour:
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01eb15d1eb81b5a42bb6362ca8a25de1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b8f52bdbff6c6d12b9f80fb3f82739d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -690,7 +690,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: a57cf93b9473b08adb4b89f0f6368578,
+    m_HighlightedSprite: {fileID: 21300000, guid: 7aced075f6862101aa86a8fc7141fdb6,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c74589f88d439d43b06c617367eadb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e82255f6ffa4be257b65e23c02e2db6c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1779,7 +1779,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 5173a8189012782279a16e79fb66d736,
+    m_HighlightedSprite: {fileID: 21300000, guid: d40d3874ffe2f2e328559e59894555e0,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
