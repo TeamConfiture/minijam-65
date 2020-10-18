@@ -20,7 +20,7 @@ public class CandyTextScript : MonoBehaviour
             text.text = "Candy: " + candyAmount;
         } else
         {
-            text.text = "Out of candy!";
+            text.text = "Candy: 0";
         }
     }
 }
