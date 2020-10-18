@@ -109,7 +109,7 @@ public class LabyrintheTile : MonoBehaviour
             if (endOfMoveTime - Time.time <= 0) {
 				for(int i =0; i < otherPositions.Length;i++)
 				{
-					if(otherPositions[i].transform.position != otherPositions[nextState].transform.position)
+					if(otherPositions[i].transform.position == otherPositions[previousState].transform.position)
 						otherPositions[i].GetComponent<BoxCollider2D>().enabled = true;
 				}
 				
@@ -132,7 +132,10 @@ public class LabyrintheTile : MonoBehaviour
                 endOfMoveTime = Time.time + 1;
 				
 				for(int i =0; i < otherPositions.Length;i++)
-					otherPositions[i].GetComponent<BoxCollider2D>().enabled = false;
+				{
+					if(otherPositions[i].transform.position == otherPositions[nextState].transform.position)
+						otherPositions[i].GetComponent<BoxCollider2D>().enabled = false;
+				}
                 
 				isMoving = true;
 				
