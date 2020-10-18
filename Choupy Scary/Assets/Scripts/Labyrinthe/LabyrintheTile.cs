@@ -51,7 +51,13 @@ public class LabyrintheTile : MonoBehaviour
         if (translationEnabled) {
             for (int i=0;i<otherPositions.Length-1;i++) {
                 tilePositions.Add(otherPositions[i+1].transform.position - otherPositions[i].transform.position);
+				otherPositions[i].AddComponent<BoxCollider2D>();
+				otherPositions[i].GetComponent<BoxCollider2D>().size = new Vector2(6,6);
             }
+			otherPositions[0].GetComponent<BoxCollider2D>().enabled = false;
+			
+			otherPositions[otherPositions.Length-1].AddComponent<BoxCollider2D>();
+			otherPositions[otherPositions.Length-1].GetComponent<BoxCollider2D>().size = new Vector2(6,6);
             tilePositions.Add(otherPositions[0].transform.position - otherPositions[otherPositions.Length-1].transform.position);
             previousState = 0;
             nextState = 0;
@@ -101,6 +107,12 @@ public class LabyrintheTile : MonoBehaviour
             transform.position = otherPositions[previousState].transform.position + 
                                  (futureMove*(1-Mathf.Max(0, endOfMoveTime - Time.time)));
             if (endOfMoveTime - Time.time <= 0) {
+				for(int i =0; i < otherPositions.Length;i++)
+				{
+					if(otherPositions[i].transform.position != otherPositions[nextState].transform.position)
+						otherPositions[i].GetComponent<BoxCollider2D>().enabled = true;
+				}
+				
                 previousState = nextState;
                 futureMove = Vector2.zero;
                 isMoving = false;
@@ -118,7 +130,12 @@ public class LabyrintheTile : MonoBehaviour
                 Debug.Log(transform.position);
                 Debug.Log(otherPositions[0].transform.position);*/
                 endOfMoveTime = Time.time + 1;
-                isMoving = true;
+				
+				for(int i =0; i < otherPositions.Length;i++)
+					otherPositions[i].GetComponent<BoxCollider2D>().enabled = false;
+                
+				isMoving = true;
+				
                 futureMove = tilePositions[previousState];
                 audio.PlayOneShot(translate);
                 /*Debug.Log(futureMove);
@@ -151,6 +168,7 @@ public class LabyrintheTile : MonoBehaviour
                 } else if (translationEnabled) {
                     if (!isMoving) {
                         nextState = (previousState+1)%otherPositions.Length;
+						
                     }
                 }
             }
