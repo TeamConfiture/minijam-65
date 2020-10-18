@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41745e36e69042dbebba507621fb15cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationEnabled: 1
+  rotationEnabled: 0
   angle: 0
   PlayerOnTile: 0
   translationEnabled: 0
