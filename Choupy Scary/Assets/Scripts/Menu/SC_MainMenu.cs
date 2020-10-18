@@ -11,7 +11,7 @@ public class SC_MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-
+        GlobalDataHandler.plushNb = 0;
     }
 
     public void PlayNowButton(string scene) {
