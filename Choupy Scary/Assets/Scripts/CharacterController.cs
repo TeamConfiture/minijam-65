@@ -20,6 +20,7 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         manager = GameManager.Instance;
+        manager.doudouNb = 0;
     }
 
     // Update is called once per frame
@@ -90,6 +91,14 @@ public class CharacterController : MonoBehaviour
                 myPlatform = null;
                 //Debug.Log("Leaving my Tile");
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("DevilDoudou"))
+        {
+            Debug.Log("MORT");
         }
     }
 }

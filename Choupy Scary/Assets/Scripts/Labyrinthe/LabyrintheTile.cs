@@ -22,13 +22,17 @@ public class LabyrintheTile : MonoBehaviour
     int previousState;
     int nextState;
 
-    private bool hasPlayer;
+    private bool hasEntity;
+
+    [Header("Cursor texture")]
+    public Texture2D cursorTextureRotate;
+    public Texture2D cursorTextureTranslate;
 
     // Start is called before the first frame update
     void Start()
     {
         manager = GameManager.Instance;
-        hasPlayer = false;
+        hasEntity = false;
         angle += 180.0f;
         if (transform.rotation.eulerAngles.z != 0) {
             /*Debug.Log(transform.rotation.eulerAngles.z);
@@ -131,7 +135,7 @@ public class LabyrintheTile : MonoBehaviour
                     /*Debug.Log(GetComponent<BoxCollider2D>().GetInstanceID());
                     Debug.Log(GetInstanceID()+10);
                     Debug.Log("===");*/
-                    if (!hasPlayer) {
+                    if (!hasEntity) {
                         angle = (angle+90.0f) % 360.0f;
                         //Debug.Log(angle);
                         UpdateRotation();
@@ -147,19 +151,35 @@ public class LabyrintheTile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("DevilDoudou"))
         {
             //Debug.Log("on tile " + transform.name);
-            hasPlayer = true;
+            hasEntity = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("DevilDoudou"))
         {
             //Debug.Log("exit tile " + transform.name);
-            hasPlayer = false;
+            hasEntity = false;
         }
+    }
+
+    private void OnMouseEnter()
+    {
+        if (rotationEnabled)
+        {
+            Cursor.SetCursor(cursorTextureRotate, Vector2.zero, CursorMode.Auto);
+        } else if (translationEnabled)
+        {
+            Cursor.SetCursor(cursorTextureTranslate, Vector2.zero, CursorMode.Auto);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
