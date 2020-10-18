@@ -702,9 +702,50 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
         type: 3}
+      propertyPath: projectileAttackSprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
       propertyPath: bullet
       value: 
       objectReference: {fileID: -4319043770676070497, guid: 443f85abd13efb140a64e3080b6e604c,
+        type: 3}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: projectileAttackSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 097605415ed9e2d489eb5308dcd77b95,
+        type: 3}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: projectileAttackSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: f0dab73b4ea155245be0a95b4156e017,
+        type: 3}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: projectileAttackSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c1a6a27df299af14ab3f006d8dda62af,
+        type: 3}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: projectileAttackSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 26055700a72d77f4fa03bd4718a90046,
+        type: 3}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: projectileAttackSprite.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 90fb0a280064e974f8d20b85881e2807,
+        type: 3}
+    - target: {fileID: 602802682831508555, guid: c238972fcbe16bfe6a8a4763df353ff0,
+        type: 3}
+      propertyPath: projectileAttackSprite.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1749e4990d2d8f248ab8333a29d04fd1,
         type: 3}
     - target: {fileID: 2363426659747342839, guid: c238972fcbe16bfe6a8a4763df353ff0,
         type: 3}

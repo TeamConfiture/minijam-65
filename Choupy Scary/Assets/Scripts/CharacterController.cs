@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     public float bulletSpeed = 500f;
     public float lifespan = 3f;
+    public Sprite[] projectileAttackSprite;
 
     [Header("Audio")]
     public AudioClip lootCandy;
@@ -61,10 +62,11 @@ public class CharacterController : MonoBehaviour
         direction.Normalize();
 
         Debug.Log(direction);
-
+        int projectileAttackRandomizer = Random.Range(0, 6);
         Rigidbody2D projectile = Instantiate(bullet, transform.position, transform.rotation);
         projectile.AddForce(direction * bulletSpeed);
         projectile.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        projectile.GetComponent<SpriteRenderer>().sprite = projectileAttackSprite[projectileAttackRandomizer];
         audio.PlayOneShot(shootCandy);
         Destroy(projectile.transform.gameObject, lifespan);
     }
