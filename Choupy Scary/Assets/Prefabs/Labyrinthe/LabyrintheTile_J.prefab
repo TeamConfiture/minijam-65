@@ -134,6 +134,8 @@ MonoBehaviour:
   PlayerOnTile: 0
   translationEnabled: 0
   otherPositions: []
+  cursorTextureRotate: {fileID: 0}
+  cursorTextureTranslate: {fileID: 0}
 --- !u!61 &3270240238802863931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +149,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0013765097, y: 0.0014281422}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -158,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.962412, y: 0.97249746}
   m_EdgeRadius: 0
 --- !u!61 &3788536558387132246
 BoxCollider2D:

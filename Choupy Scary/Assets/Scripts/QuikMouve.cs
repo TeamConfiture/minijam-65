@@ -36,6 +36,7 @@ public class QuikMouve : MonoBehaviour
             Input.ResetInputAxes();
             if(nextCameraPosition != null) {
                 Camera.main.transform.position = nextCameraPosition.position;
+                Camera.main.orthographicSize = nextCameraPosition.localScale.x;
                 //Debug.Log(Camera.main.transform.position);
             }
         }

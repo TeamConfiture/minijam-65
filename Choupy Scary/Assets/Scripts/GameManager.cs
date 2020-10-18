@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public delegate void ResetAction();
     public static event ResetAction ResetPrefabs;
 
+    public int doudouNb = 0;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -42,19 +44,9 @@ public class GameManager : MonoBehaviour
         obtainedStatus[2]=false;
     }
 
-    public void GetDoudou(int doudouId) {
-        Debug.Log("Obtained Doudou !");
-        if (doudouId < 1 || doudouId > 3) {
-            Debug.Log("Wrong ID !!!");
-        } else {
-            obtainedStatus[doudouId-1] = true;
-        }
-    }
-
-    public bool GetDoudouValue(int doudouId) {
-        if (doudouId < 1 || doudouId > 3)
-            return false;
-        return obtainedStatus[doudouId-1];
+    public int RegisterNewDoudou()
+    {
+        return ++doudouNb;
     }
 
     public void TriggerPrefabsReset()
