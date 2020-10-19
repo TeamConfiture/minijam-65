@@ -9,6 +9,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            Debug.Log(GlobalDataHandler.plushNb);
             GlobalDataHandler.plushNb += GameManager.Instance.doudouNb;
             SceneManager.LoadScene(Scene);
         }
